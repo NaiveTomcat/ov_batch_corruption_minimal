@@ -4,6 +4,8 @@ This repo features a minimal model to reproduce the bug in openvinotoolkit/openv
 
 Requirements: openvino, torch, onnxscript
 
+To run the test yourself, just simply `python run_tests.py`
+
 ## Model Structure
 
 This is a rather minimal model, only consisting 2 Conv and 1 Concat between input and output.
