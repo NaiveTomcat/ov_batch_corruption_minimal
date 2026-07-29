@@ -31,8 +31,8 @@ def run_test() -> None:
     print("Running batch corruption tests with OpenVINO regarding issue #37103")
     print(f"Environment: OpenVINO {ov.__version__}, PyTorch {torch.__version__}")
     print("Creating model and exporting to ONNX...")
-    channels = 8
-    width = 8
+    channels = 4
+    width = 4
     seed = 42
     onnx_path = export_onnx(channels=channels, width=width, seed=seed)
 
@@ -109,11 +109,13 @@ def run_test() -> None:
         if len(wrong):
             bad_count += 1
             if first_bad is None:
-                first_bad = (i, batch_size, wrong)
+                first_bad = (i, batch_size, wrong, output[wrong[0]])
     print(f"Ran {N_CALLS} tests with batch sizes between 1 and 16. Found {bad_count} bad outputs.")
     if first_bad is not None:
         print(f"First bad output at call {first_bad[0]} with batch size {first_bad[1]} and wrong indices {first_bad[2]}.")
         print(f"Previous batch size was {batch_sizes[first_bad[0]-1]}.")
+        print(f"Bad output value: {first_bad[3]}")
+        print(f"Baseline GPU value: {baseline_gpu}")
     print("="*80)
 
 
