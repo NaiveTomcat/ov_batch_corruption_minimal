@@ -12,6 +12,7 @@ intel-sycl-rt==2026.0.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3
 mkl==2026.0.0
+ml_dtypes==0.5.4
 mpmath==1.3.0
 networkx==3.6.1
 numpy==2.4.4
@@ -23,11 +24,16 @@ onemkl-sycl-dft==2026.0.0
 onemkl-sycl-lapack==2026.0.0
 onemkl-sycl-rng==2026.0.0
 onemkl-sycl-sparse==2026.0.0
+onnx==1.22.0
+onnx-ir==0.2.1
+onnxscript==0.7.1
 openvino==2026.4.0.dev20260727
 openvino-genai==2026.4.0.0.dev20260727
 openvino-telemetry==2025.2.0
 openvino-tokenizers==2026.4.0.0.dev20260727
+packaging==26.2
 pillow==12.2.0
+protobuf==7.35.1
 pyelftools==0.32
 pyzes==0.1.1
 setuptools==78.1.0
